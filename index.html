@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Currency Converter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="coinExchangeSticker.png" type="image/png">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <img src="coinExchangeSticker.png" alt="Currency Globe" class="app-logo">
+            <h1>Global Currency Converter</h1>
+        </header>
+        
+        <main class="converter-card">
+            <div class="input-section">
+                <div class="amount-input">
+                    <label for="userValue">Amount</label>
+                    <div class="input-wrapper">
+                        <span class="currency-symbol">$</span>
+                        <input type="number" id="userValue" min="1" placeholder="100.00">
+                    </div>
+                </div>
+                
+                <div class="currency-selectors">
+                    <div class="currency-from">
+                        <label for="fromCurrency">From</label>
+                        <select id="fromCurrency"></select>
+                    </div>
+                    
+                    <button id="switchCurrency" aria-label="Swap currencies">
+                        <i class="fas fa-exchange-alt"></i>
+                    </button>
+                    
+                    <div class="currency-to">
+                        <label for="toCurrency">To</label>
+                        <select id="toCurrency"></select>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="result-section">
+                <div class="rate-display" id="status">
+                    <i class="fas fa-info-circle"></i>
+                    <span>Select currencies to see exchange rate</span>
+                </div>
+                
+                <button id="btn" class="convert-btn">
+                    <i class="fas fa-calculator"></i> Convert
+                </button>
+                
+                <div class="result-display" id="result">
+                    <div class="result-placeholder">
+                        <img src="coinExchangeSticker.png" alt="Conversion result">
+                        <p>Your conversion will appear here</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="./script.js"></script>
+</body>
+</html>

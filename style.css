@@ -1,0 +1,246 @@
+:root {
+    --primary: #4361ee;
+    --secondary: #3f37c9;
+    --accent: #4895ef;
+    --light: #f8f9fa;
+    --dark: #212529;
+    --success: #4cc9f0;
+    --error: #f72585;
+    --border-radius: 12px;
+    --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.app-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.app-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 4px 8px rgba(67, 97, 238, 0.3));
+}
+
+.app-header h1 {
+    color: var(--dark);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.converter-card {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 30px;
+}
+
+.input-section {
+    margin-bottom: 25px;
+}
+
+.amount-input {
+    margin-bottom: 25px;
+}
+
+.amount-input label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.currency-symbol {
+    position: absolute;
+    left: 15px;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+#userValue {
+    width: 100%;
+    padding: 15px 15px 15px 40px;
+    border: 2px solid #e9ecef;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+#userValue:focus {
+    border-color: var(--accent);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(72, 149, 239, 0.2);
+}
+
+.currency-selectors {
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+}
+
+.currency-from, .currency-to {
+    flex: 1;
+}
+
+.currency-selectors label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.currency-selectors select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e9ecef;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    background-color: white;
+    cursor: pointer;
+}
+
+.currency-selectors select:focus {
+    border-color: var(--accent);
+    outline: none;
+}
+
+#switchCurrency {
+    background: var(--primary);
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 8px;
+}
+
+#switchCurrency:hover {
+    background: var(--secondary);
+    transform: rotate(180deg);
+}
+
+.result-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.rate-display {
+    background: #f8f9fa;
+    padding: 12px;
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--dark);
+}
+
+.rate-display i {
+    color: var(--accent);
+}
+
+.convert-btn {
+    width: 100%;
+    padding: 15px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.convert-btn:hover {
+    background: var(--secondary);
+    transform: translateY(-2px);
+}
+
+.convert-btn:disabled {
+    background: #adb5bd;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.result-display {
+    background: #f8f9fa;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.result-placeholder img {
+    width: 60px;
+    opacity: 0.7;
+    margin-bottom: 10px;
+}
+
+.result-placeholder p {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+#result.active {
+    background: rgba(76, 201, 240, 0.1);
+    border: 1px dashed var(--success);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .converter-card {
+        padding: 20px;
+    }
+    
+    .currency-selectors {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    #switchCurrency {
+        align-self: center;
+        margin: 10px 0;
+    }
+}
